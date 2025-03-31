@@ -1,0 +1,19 @@
+@2day_HostAddress = https://localhost:7181
+@_2day_HostAddress = http://localhost:5140
+
+
+
+
+
+
+
+
+POST {{2day_HostAddress}}/api/courses
+Content-Type: application/json
+
+{
+  title: "Mathematics",
+  teacherId: 1
+}
+
+###

@@ -3,11 +3,15 @@
 
 
 
-POST {{2day_HostAddress}}/api/courses
+POST {{2day_HostAddress}}/api/courses/1
 Content-Type: application/json
 
 {
   //Course
 }
+
+###
+
+POST {{2day_HostAddress}}/api/courses/0/students/0
 
 ###

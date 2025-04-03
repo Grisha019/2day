@@ -17,7 +17,7 @@ builder.Services.AddRazorPages();
 // Регистрируем Swagger для документирования API
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+builder.Services.AddControllers();
 var app = builder.Build();
 
 // Конфигурация Middleware

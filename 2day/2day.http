@@ -17,3 +17,21 @@ Content-Type: application/json
 }
 
 ###
+
+POST {{2day_HostAddress}}/api/courses
+Content-Type: application/json
+
+{
+  //Course
+}
+
+###
+
+POST {{2day_HostAddress}}/api/courses
+Content-Type: application/json
+
+{
+  //Course
+}
+
+###

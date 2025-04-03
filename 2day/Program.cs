@@ -31,9 +31,9 @@ app.UseRouting(); // Настройка маршрутизации
 
 app.UseAuthorization(); // Авторизация
 
-app.UseEndpoints(endpoints =>
+/*app.UseEndpoints(endpoints =>
 {
     endpoints.MapRazorPages();
 });
-
+*/
 app.Run(); // Запуск приложения

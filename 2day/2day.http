@@ -8,7 +8,14 @@ POST {{2day_HostAddress}}/api/courses
 Content-Type: application/json
 
 {
- "title" :"sdvgf"
+   "Id" : 1
 }
 
 ###
+
+GET {{2day_HostAddress}}/api/courses
+
+###
+
+
+

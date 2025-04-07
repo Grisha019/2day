@@ -36,14 +36,14 @@ namespace _2day.Controllers
         {
             _context.Teachers.Add(teacher);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetTeacher), new { id = teacher.Id }, teacher);
+            return CreatedAtAction(nameof(GetTeacher), new { id = teacher.TeacherId }, teacher);
         }
 
         // PUT: api/teachers/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateTeacher(int id, [FromBody] Teacher teacher)
         {
-            if (id != teacher.Id)
+            if (id != teacher.TeacherId)
                 return BadRequest();
 
             _context.Entry(teacher).State = EntityState.Modified;
@@ -54,7 +54,7 @@ namespace _2day.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Teachers.Any(t => t.Id == id))
+                if (!_context.Teachers.Any(t => t.TeacherId == id))
                     return NotFound();
                 else
                     throw;

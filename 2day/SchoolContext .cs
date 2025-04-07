@@ -24,6 +24,22 @@ namespace _2day
                 .WithMany(t => t.Courses)
                 .HasForeignKey(c => c.TeacherId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+            // Добавление данных в таблицы
+            modelBuilder.Entity<Teacher>().HasData(
+                new Teacher { TeacherId = 1, Name = "Ivanivanov" },
+                new Teacher { TeacherId = 2, Name = "PetrPetrov" }
+            );
+
+            modelBuilder.Entity<Student>().HasData(
+                new Student { StudentId = 3, Name = "AnnaSmirnova" },
+                new Student { StudentId = 4, Name = "SergeySidorov" }
+            );
+
+            modelBuilder.Entity<Course>().HasData(
+                new Course { CourseId = 5, Title = "Mathematics", TeacherId = 1 },
+                new Course { CourseId = 6, Title = "Physics", TeacherId = 2}
+            );
         }
     }
 }

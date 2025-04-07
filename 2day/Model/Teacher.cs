@@ -1,10 +1,12 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace _2day.Model
 {
     public class Teacher
     {
-        public int Id { get; set; }
+        [Key]
+        public int TeacherId { get; set; }
         public string Name { get; set; } = string.Empty;
 
         // Один преподаватель может вести несколько курсов

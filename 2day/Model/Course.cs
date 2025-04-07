@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace _2day.Model
 {
     public class Course
     {
+        [Key]
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
 

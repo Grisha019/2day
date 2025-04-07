@@ -27,18 +27,18 @@ namespace _2day
 
             // Добавление данных в таблицы
             modelBuilder.Entity<Teacher>().HasData(
-                new Teacher { Id = 1, Name = "Ivanivanov" },
-                new Teacher { Id = 2, Name = "PetrPetrov" }
+                new Teacher { TeacherId = 1, Name = "Ivanivanov" },
+                new Teacher { TeacherId = 2, Name = "PetrPetrov" }
             );
 
             modelBuilder.Entity<Student>().HasData(
-                new Student { Id = 3, Name = "AnnaSmirnova" },
-                new Student { Id = 4, Name = "SergeySidorov" }
+                new Student { StudentId = 3, Name = "AnnaSmirnova" },
+                new Student { StudentId = 4, Name = "SergeySidorov" }
             );
 
             modelBuilder.Entity<Course>().HasData(
-                new Course { Id = 5, Title = "Mathematics", TeacherId = 1 },
-                new Course { Id = 6, Title = "Physics", TeacherId = 2}
+                new Course { CourseId = 5, Title = "Mathematics", TeacherId = 1 },
+                new Course { CourseId = 6, Title = "Physics", TeacherId = 2}
             );
         }
     }

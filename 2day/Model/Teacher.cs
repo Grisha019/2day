@@ -6,7 +6,7 @@ namespace _2day.Model
     public class Teacher
     {
         [Key]
-        public int Id { get; set; }
+        public int TeacherId { get; set; }
         public string Name { get; set; } = string.Empty;
 
         // Один преподаватель может вести несколько курсов

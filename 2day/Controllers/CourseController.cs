@@ -32,7 +32,7 @@ namespace _2day.Controllers
             var course = await _context.Courses
                 .Include(c => c.Teacher)
                 .Include(c => c.Students)
-                .FirstOrDefaultAsync(c => c.Id == id);
+                .FirstOrDefaultAsync(c => c.CourseId == id);
             if (course == null)
                 return NotFound();
             return course;
@@ -45,14 +45,14 @@ namespace _2day.Controllers
             // Если в теле запроса не указан преподаватель, он может быть назначен отдельно
             _context.Courses.Add(course);
             await _context.SaveChangesAsync();
-            return CreatedAtAction(nameof(GetCourse), new { id = course.Id }, course);
+            return CreatedAtAction(nameof(GetCourse), new { id = course.CourseId }, course);
         }
 
         // PUT: api/courses/5
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateCourse(int id, [FromBody] Course course)
         {
-            if (id != course.Id)
+            if (id != course.CourseId)
                 return BadRequest();
 
             _context.Entry(course).State = EntityState.Modified;
@@ -62,7 +62,7 @@ namespace _2day.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!_context.Courses.Any(c => c.Id == id))
+                if (!_context.Courses.Any(c => c.CourseId == id))
                     return NotFound();
                 else
                     throw;
@@ -89,7 +89,7 @@ namespace _2day.Controllers
         {
             var course = await _context.Courses
                 .Include(c => c.Students)
-                .FirstOrDefaultAsync(c => c.Id == id);
+                .FirstOrDefaultAsync(c => c.CourseId == id);
             if (course == null)
                 return NotFound("Курс не найден");
 
@@ -98,7 +98,7 @@ namespace _2day.Controllers
                 return NotFound("Студент не найден");
 
             // Проверка, не записан ли уже студент на курс
-            if (!course.Students.Any(s => s.Id == studentId))
+            if (!course.Students.Any(s => s.StudentId == studentId))
             {
                 course.Students.Add(student);
                 await _context.SaveChangesAsync();

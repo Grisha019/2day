@@ -8,8 +8,8 @@ POST {{2day_HostAddress}}/api/courses
 Content-Type: application/json
 
 {
-   "Name": "Ivanivanov",
-   "TeacherId": 1
+  "Title" : "Mathematics",
+
 }
 
 ###
@@ -17,6 +17,8 @@ Content-Type: application/json
 GET {{2day_HostAddress}}/api/courses
 
 ###
+
+
 
 
 

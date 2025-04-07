@@ -6,7 +6,7 @@ namespace _2day.Model
     public class Course
     {
         [Key]
-        public int Id { get; set; }
+        public int CourseId { get; set; }
         public string Title { get; set; } = string.Empty;
 
         // Один курс принадлежит одному преподавателю
